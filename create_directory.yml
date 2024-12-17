@@ -1,3 +1,9 @@
+---
+- name: Create Ansible folder
+  hosts: all
+  become: true
+
+tasks:
 - name: Create ansible directory
   ansible.builtin.file:
     path: /home/ubuntu/ansible
