@@ -4,6 +4,11 @@
   become: true
 
   tasks:
+  - name: Check if output directory exists
+      stat:
+      path: /home/ubuntu/ansible
+      register: output_folder
+      
   - name: Create ansible directory
     ansible.builtin.file:
       path: /home/ubuntu/ansible
@@ -12,3 +17,4 @@
       group: users
       mode: 0775
       recurse: yes
+      when: output_folder.stat.exists == false
