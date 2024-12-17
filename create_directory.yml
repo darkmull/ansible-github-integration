@@ -5,4 +5,10 @@
 
   tasks:
     - name: Create ansible directory
-      command: mkdir /home/ubuntu/ansible
+      ansible.builtin.file:
+      path: /home/ubuntu/ansible
+      state: directory
+      owner: sysadmin
+      group: users
+      mode: 0775
+      recurse: yes 
