@@ -3,12 +3,12 @@
   hosts: all
   become: true
 
-tasks:
-- name: Create ansible directory
-  ansible.builtin.file:
-    path: /home/ubuntu/ansible
-    state: directory
-    owner: sysadmin
-    group: users
-    mode: 0775
-    recurse: yes
+  tasks:
+  - name: Create ansible directory
+    ansible.builtin.file:
+      path: /home/ubuntu/ansible
+      state: directory
+      owner: sysadmin
+      group: users
+      mode: 0775
+      recurse: yes
